@@ -4,6 +4,7 @@ var ReactDOM = require("react-dom");
 //require components here :
 var Login = require("./components/login.jsx");
 var Dashboard = require("./components/dashboard.jsx");
+var Register = require("./components/register.jsx");
 
 // require router:
 var Router = require('react-router').Router;
@@ -21,7 +22,6 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="content">
-        <h1>Werkin</h1>
         <Login/>
       </div>
     )
@@ -32,6 +32,7 @@ ReactDOM.render(
   <Router history={BrowserHistory}>
     <Route path='/' component={App}/>
     <Route path='/dashboard' component={Dashboard}/>
+    <Route path='/register' component={Register}/>
   </Router>,
   document.getElementById('app')
 );

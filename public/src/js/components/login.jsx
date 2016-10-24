@@ -1,5 +1,6 @@
 var React = require('react');
 var AppDispatcher = require('../dispatchers/appDispatcher.js')
+var Link = require('react-router').Link
 
 
 var Login = React.createClass({
@@ -13,17 +14,22 @@ var Login = React.createClass({
         username: self.refs.username.value,
         password: self.refs.password.value
       }
-    })
+    });
+      console.log("data dispatched")
 
   },
 
   render : function(){
     return (
-      <form>
-        <input type="text" name="username" ref="username"/>
-        <input type="password" name="password" ref="password"/>
-        <button type="button" onClick="handleLogin">Login</button>
-      </form>
+      <div>
+        <h1> Please Login </h1>
+        <form>
+          Username :<input type="text" name="username" ref="username"/>
+          Password :<input type="password" name="password" ref="password"/>
+          <button type="button" onClick={this.handleLogin}>Login</button>
+        </form>
+        <button type="button"><Link to="/register">Register</Link></button>
+      </div>
     )
 
   }

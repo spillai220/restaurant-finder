@@ -1,11 +1,12 @@
 var EventEmitter = require('events').EventEmitter;
 var merge = require('merge');
 var axios = require('axios');
-var Dispatcher = require('../dispatchers/appDispatcher.js');
+var AppDispatcher = require('../dispatchers/appDispatcher.js');
 //may need to be moved to login:
 var BrowserHistory = require("react-router/lib/browserHistory");
 var _user= {};
 var loggedIn = false;
+var registering = false;
 
 var UserStore = merge(EventEmitter.prototype, {
   getUser : function(){
@@ -13,17 +14,22 @@ var UserStore = merge(EventEmitter.prototype, {
   },
   getLoggedIn : function(){
     return loggedIn;
-  }
+  },
 
+  getRegisterStatus : function(){
+    return registering;
+  }
 
 })
 
 module.exports = UserStore;
 
-Dispatcher.register(handleAction);
+AppDispatcher.register(handleAction);
 
 function handleAction(payload) {
+  console.log(payload);
     if(payload.action == "LOGIN"){
+      console.log("payload picked!")
       axios({
         method:'post',
         url: '/login',
@@ -40,5 +46,19 @@ function handleAction(payload) {
       });
 
     }
-    //UserStore.emit("tang");
+    else if(payload.action == "REGISTER"){
+      console.log("payload picked!")
+      axios({
+        method:'post',
+        url: '/register',
+        data: payload.data
+      }).then(function(response){
+          registering = true;
+          console.log("Registered User - axios call")
+          BrowserHistory.push('/');
+
+      }).catch(function(err){
+        console.log("axios error : "+err.message)
+      });
+    }
 }

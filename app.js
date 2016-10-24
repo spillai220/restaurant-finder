@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var path = require('path');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/project2v2');
+mongoose.connect('mongodb://localhost/restaurantfinder');
 
 var routes = require('./config/router');
 var app = express();

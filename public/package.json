@@ -16,6 +16,7 @@
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.25.0",
     "flux": "^3.0.0",
+    "merge": "^1.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1",
