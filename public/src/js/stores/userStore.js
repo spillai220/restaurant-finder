@@ -33,13 +33,17 @@ function handleAction(payload) {
       axios({
         method:'post',
         url: '/login',
+        data: payload.data
       }).then(function(response){
         console.log("logging in (axios post)");
         loggedIn = true;
         UserStore.emit('LOGSUCCESS');
-        if(response.status(200)){
-          BrowserHistory.push('/dashboard')
+        if(response.status == 200){
+          BrowserHistory.push('/dashboard');
         }
+        // if(response.status(200)){
+        //   BrowserHistory.push('/dashboard')
+        // }
 
       }).catch(function(err){
         console.log("axios error : "+err.message)

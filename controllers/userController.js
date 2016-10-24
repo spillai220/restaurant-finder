@@ -19,7 +19,6 @@ function indexLogin(req, res){
   })
 };
 function createUser(req, res){
-  console.log(req);
   User.create({
     name : req.body.name,
     username: req.body.username,
