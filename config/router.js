@@ -4,6 +4,7 @@ var path = require('path');
 
 var axios = require('axios');
 var userController = require('../controllers/userController.js');
+var appController = require('../controllers/appController.js');
 
 router.route('/login')
       .post(userController.index);
@@ -11,6 +12,8 @@ router.route('/login')
 router.route('/register')
       .post(userController.create);
 
+router.route('/search')
+      .post(appController.search);
 // router.route('*')
 //       .get(function(req,res){
 //         res.sendFile(path.resolve("./public/index.html"));

@@ -17,6 +17,7 @@ var BrowserHistory = require("react-router/lib/browserHistory");
 
 require('../css/style.css');
 
+//main app page JSX injected to HTML
 var App = React.createClass({
 
   render: function() {
@@ -27,8 +28,9 @@ var App = React.createClass({
     )
   }
 });
-
+//render react DOM
 ReactDOM.render(
+  //react router to route to specific components
   <Router history={BrowserHistory}>
     <Route path='/' component={App}/>
     <Route path='/dashboard' component={Dashboard}/>
