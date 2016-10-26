@@ -67,17 +67,17 @@ function handleAction(payload) {
         console.log("axios error : "+err.message)
       });
     }
-    else if(payload.action == "SEARCH"){
-      console.log("payload search action received !");
-      axios({
-        method:'post',
-        url: '/search',
-        data: payload.data
-      }).then(function(response){
-        console.log(response);
-
-      }).catch(function(err){
-        console.log("axios error : "+err.message)
-      });
-    }
+    // else if(payload.action == "SEARCH"){
+    //   console.log("payload search action received !");
+    //   axios({
+    //     method:'post',
+    //     url: '/search',
+    //     data: payload.data
+    //   }).then(function(response){
+    //     console.log(response);
+    //
+    //   }).catch(function(err){
+    //     console.log("axios error : "+err.message)
+    //   });
+    // }
 }
