@@ -19,32 +19,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
-//var upload = multer({dest : '/uploads'})
-var storage = multer.diskStorage({
-  destination : function(req, file, cb){
-    cb(null, './public/uploads')
-  },
-  filename : function(req, file, cb){
-    cb(null, file.fieldname + '-' + Date.now()+'.'+ mime.extension(file.mimetype))
-  }
-})
-var upload = multer({storage : storage})
-app.post('/profile', upload.any(), function(req, res, next){
-  //req.file is the avatar file
-  //req.body will hold the textfields
-  console.log(req.file +" uploaded!");
-  res.redirect('/dashboard');
-})
-
-// app.use(cookieParser());
-// app.use(session({
-//   secret: 'secretkey',
-//   resave: false,
-//   saveUnitialized : true
-// }));
-
-
-
 app.listen(3000, function(){
   console.log("listening on port 3000")
 })

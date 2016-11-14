@@ -5,12 +5,16 @@ var ReactDOM = require("react-dom");
 var Login = require("./components/login.jsx");
 var Dashboard = require("./components/dashboard.jsx");
 var Register = require("./components/register.jsx");
+var Restaurant = require("./components/restaurant.jsx");
 
 // require router:
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 
+// requiring all store:
+var userStore = require("./stores/userStore.js");
+var appStore  = require("./stores/appStore.js");
 //require browserhistory - routing
 var BrowserHistory = require("react-router/lib/browserHistory");
 

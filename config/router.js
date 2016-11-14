@@ -9,13 +9,13 @@ var appController = require('../controllers/appController.js');
 router.route('/login')
       .post(userController.index);
 
-router.route('/register')
+router.route('/users')
       .post(userController.create);
 
 router.route('/search')
       .post(appController.search);
-// router.route('*')
-//       .get(function(req,res){
-//         res.sendFile(path.resolve("./public/index.html"));
-//       });
+router.route('*')
+      .get(function(req,res){
+        res.sendFile(path.resolve("./public/index.html"));
+      });
 module.exports = router;

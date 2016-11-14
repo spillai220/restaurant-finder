@@ -3,11 +3,6 @@ var Link = require('react-router').Link;
 var AppDispatcher = require('../dispatchers/appDispatcher.js');
 var UserStore = require('../stores/userStore.js');
 
-// data   : {
-//   name : self.refs.name.value,
-//   username :self.refs.username.value,
-//   password :self.refs.password.value
-// }
 var Register = React.createClass({
 
   handleRegister : function(event){
@@ -16,7 +11,9 @@ var Register = React.createClass({
     console.log("handling register: "+this.refs.name.value);
     AppDispatcher.dispatch({
       action : "REGISTER",
-      data : { username: self.refs.username.value,
+      data : {
+               name: self.refs.name.value,
+               username: self.refs.username.value,
                password: self.refs.password.value
              }
     });

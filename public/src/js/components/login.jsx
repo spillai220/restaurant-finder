@@ -15,7 +15,7 @@ var Login = React.createClass({
         password: self.refs.password.value
       }
     });
-      console.log("data dispatched")
+      console.log("login dispatched")
 
   },
 

@@ -2,12 +2,16 @@ var EventEmitter = require('events').EventEmitter;
 var merge = require('merge');
 var axios = require('axios');
 var AppDispatcher = require('../dispatchers/appDispatcher.js');
-var BrowserHistory = require("react-router/lib/browserHistory");
+var browserHistory = require("react-router/lib/browserHistory");
 
 var _hasResults = false;
+var result = [];
 var AppStore = merge(EventEmitter.prototype, {
   checkResults : function(){
     return _hasResults;
+  },
+  getNearbyRestaurants : function(){
+    return result;
   }
 })
 
@@ -24,7 +28,10 @@ function handleSearchAction(payload) {
         url: '/search',
         data: payload.data
       }).then(function(response){
-        console.log(response);
+        result  = response.data.nearby_restaurants;
+        console.log(result);
+        _hasResults = true;
+        AppStore.emit("GETDATA");
 
       }).catch(function(err){
         console.log("axios error : "+err.message)

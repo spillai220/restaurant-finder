@@ -20,10 +20,11 @@ function searchResult (req, res){
       headers: {'user-key' : '13b9414eab7841a2b4b1d6d098a1f89d'},
     })
       .then(function (response) {
-            console.log(response);
+            console.log(response)
+            res.status(200).send(response.data);
           })
       .catch(function (error) {
-            console.log(error);
+            res.status(500).send({err : error.message})
           });
 
 
