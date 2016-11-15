@@ -11,6 +11,7 @@ var Restaurant = require("./components/restaurant.jsx");
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
+var $ = require('jquery');
 
 // requiring all store:
 var userStore = require("./stores/userStore.js");
@@ -26,8 +27,8 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <div className="content">
-        <Login/>
+      <div>
+        <Dashboard/>
       </div>
     )
   }

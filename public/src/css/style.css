@@ -1,0 +1,44 @@
+h5{
+  text-shadow: 1px 1px black;
+}
+
+html {
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+.main_search{
+
+  background-color: white !important;
+  width: 50% !important;
+
+}
+.img_container{
+  position: relative;
+}
+.header_img{
+width: 100%;
+height: auto;
+filter: blur(1px);
+-webkit-filter: blur(1px);
+}
+.overlay{
+  top: 30%;
+  left: 25%;
+  position: absolute;
+  width:100%;
+
+}
+/*.col.s12 > .btn {
+   width: 100%;
+}*/
+.form{
+  padding-left: 2%;
+}
+h5 .restaurant-title{
+  color: #CE0009;
+}
+.ratings{
+  colour:white;
+  position: relative;
+  border-radius: 25px;
+  text-align: center;
+}
