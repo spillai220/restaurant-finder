@@ -21,7 +21,7 @@ var Restaurant = React.createClass({
 
           </p>
           </div>
-          <h5 className="restaurant-title">{restaurant.name}</h5>
+          <h5 className="red-text darken-2">{restaurant.name}</h5>
           <p className="blue-grey-text lighten-1">{restaurant.location.address}</p>
         </div>
         <hr/>

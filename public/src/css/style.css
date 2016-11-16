@@ -1,4 +1,4 @@
-h5{
+.white-text h5{
   text-shadow: 1px 1px black;
 }
 
@@ -36,9 +36,12 @@ filter: blur(1px);
 h5 .restaurant-title{
   color: #CE0009;
 }
-.ratings{
-  colour:white;
-  position: relative;
-  border-radius: 25px;
-  text-align: center;
+.ratings p {
+    color: white !important;
+    position: relative;
+    border-radius: 14px;
+    text-align: center;
+    padding: 4%;
+    display: inline-block;
+    float: right;
 }

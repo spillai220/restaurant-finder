@@ -4,7 +4,7 @@ var React = require('react');
 var AppStore = require('../stores/appStore.js');
 var AppDispatcher = require('../dispatchers/appDispatcher.js');
 var Restaurant = require('./restaurant.jsx');
-var $ = require('jquery');
+var Loader = require('./loader.jsx');
 
 var Dashboard = React.createClass({
   getInitialState : function(){
@@ -39,7 +39,7 @@ var Dashboard = React.createClass({
     console.log(AppStore.checkResults());
     var results = (
         <div>
-          <h3>Nearby Restaurants</h3>
+          <h3>{this.state.restaurantData.length} results found.</h3>
           {
             this.state.restaurantData.map(function(result, i){
 
@@ -64,8 +64,8 @@ var Dashboard = React.createClass({
     </div>
       <div className="container">
 
-
-        {(AppStore.checkResults() ==  true && this.state.loading ==true) ? <h3>loading...</h3> : ''}
+        {console.log()}
+        {(AppStore.checkResults() ==  true && this.state.loading ==true) ? <Loader/> : ''}
         {(AppStore.checkResults() && !this.state.loading) ? results : ''}
         </div>
       </div>

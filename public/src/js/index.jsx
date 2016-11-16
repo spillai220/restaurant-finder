@@ -6,6 +6,8 @@ var Login = require("./components/login.jsx");
 var Dashboard = require("./components/dashboard.jsx");
 var Register = require("./components/register.jsx");
 var Restaurant = require("./components/restaurant.jsx");
+var Loader = require("./components/loader.jsx");
+
 
 // require router:
 var Router = require('react-router').Router;
